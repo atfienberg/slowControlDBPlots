@@ -27,7 +27,7 @@ def make_plot(calo_num):
     # mask out failed reads
     tempframe = tempframe[(tempframe > 20) & (tempframe < 50)]
 
-    tempframe.plot(legend=False, style='o')
+    tempframe.plot(legend=False)
 
     plt.savefig('calo{}temps.pdf'.format(calo_num))
 
