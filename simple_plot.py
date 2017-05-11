@@ -15,7 +15,7 @@ def make_plot(calo_num):
                            host=dbconf['host'],
                            database=dbconf['dbname'], port=dbconf['port'])
     cursor=cnx.cursor()
-    cursor.execute("select value, time from g2sc_values where channel='calo{}temps'".format(calo_num))
+    cursor.execute("select value, time from g2sc_values where channel='calo{}temps' and time > '2017-5-3'".format(calo_num))
     sipmnames = ['SiPM{}'.format(i) for i in range(54)] 
     temps, times = zip(*cursor)
 
